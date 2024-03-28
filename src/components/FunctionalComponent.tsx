@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 
 // di default un componente a funzione NON si aspetta nessuna prop!
 // dobbiamo informare FunctionalComponent che riceverà una o più prop...
@@ -21,7 +22,9 @@ const FunctionalComponent = function (props: FunctionalComponentProps) {
     <div>
       <h1 onClick={props.handleClick}>{props.customTitle.toLowerCase()}</h1>
       <h3>Mi chiamo: {myName}</h3>
-      <button onClick={() => setObj({ ciao: true })}>CLICCAMI</button>
+      <Button variant="secondary" onClick={() => setObj({ ciao: true })}>
+        CLICCAMI
+      </Button>
     </div>
   )
 }

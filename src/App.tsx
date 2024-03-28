@@ -1,7 +1,12 @@
 import React from 'react'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import FunctionalComponent from './components/FunctionalComponent'
 import ClassComponent from './components/ClassComponent'
+import Alert from 'react-bootstrap/Alert'
+import FormComponent from './components/FormComponent'
+import MyNavBar from './components/MyNavBar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   const handleClick = () => {
@@ -9,15 +14,36 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <FunctionalComponent
-          customTitle="COMPONENTE A FUNZIONE"
-          handleClick={handleClick}
-        />
-        <ClassComponent customTitle="COMPONENTE A FUNZIONE" />
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <MyNavBar />
+        <header className="App-header">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Alert variant="success">
+                    I componenti di React Bootstrap funzionano senza problemi{' '}
+                  </Alert>
+
+                  <FunctionalComponent
+                    customTitle="COMPONENTE A FUNZIONE"
+                    handleClick={handleClick}
+                  />
+                </>
+              }
+            />
+
+            <Route path="/form" element={<FormComponent />} />
+            <Route
+              path="/class"
+              element={<ClassComponent customTitle="COMPONENTE A CLASSE" />}
+            />
+          </Routes>
+        </header>
+      </div>
+    </BrowserRouter>
   )
 }
 
