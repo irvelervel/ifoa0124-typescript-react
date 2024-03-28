@@ -7,6 +7,7 @@ import Alert from 'react-bootstrap/Alert'
 import FormComponent from './components/FormComponent'
 import MyNavBar from './components/MyNavBar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import FetchComponent from './components/FetchComponent'
 
 function App() {
   const handleClick = () => {
@@ -40,6 +41,8 @@ function App() {
               path="/class"
               element={<ClassComponent customTitle="COMPONENTE A CLASSE" />}
             />
+
+            <Route path="/books" element={<FetchComponent />} />
           </Routes>
         </header>
       </div>

@@ -38,6 +38,14 @@ const MyNavBar = function () {
             >
               Class
             </Link>
+            <Link
+              to="/books"
+              className={
+                location.pathname === '/books' ? 'nav-link active' : 'nav-link'
+              }
+            >
+              Books
+            </Link>
             <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
